@@ -19,7 +19,14 @@ const StarWarsAPICall = () => {
 	const [status, setStatus] = useState<number>()
 
 	
-	  
+	
+	function calculateSubmit(){
+		
+		alert("submit")
+	}
+	
+	
+	 /*
 	useEffect(() => {
 	
 		const getData = async () => {
@@ -57,20 +64,26 @@ const StarWarsAPICall = () => {
 	if(errorMessage.length > 0) {
 		
 		//console.log("status is "+status)
-		if(status == 500) return (<>{ERROR_500}</>)
-		if(status == 418) return (<>{ERROR_418}</>)
-			
+					
 		return (
 			<>
 				Error:{errorMessage}
 			</>
 		)
 	}
+	*/
+
+	const [textInput, setTextInput] = useState<string>("")
+
+	let buttonDisabled = true
+	
+	if(textInput.length > 2) buttonDisabled = false
 
 	//uses scan so findtext can find each field
     return (
         <>
-            <div><span>Name:{json?.name}</span><span>Height:{json?.height}</span> <span>Mass:{json?.mass}</span> <span>Birth Year:{json?.birth_year}</span> <span>Eye Colour:{json?.eye_color}</span></div>
+<div><input type={"text"} size={60} onChange={(e) => setTextInput(e.target.value) } /> </div>
+<div><button disabled={buttonDisabled} onClick={calculateSubmit}>Calculate</button> </div>
         </>
     )
 	
