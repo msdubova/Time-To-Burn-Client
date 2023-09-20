@@ -2,19 +2,9 @@ import {useEffect, useState} from "react"
 
 import URL from "../util/url"
 
-import {ERROR_500, ERROR_418} from "../util/error_codes"
-
-interface Character {
-	name:string,
-	height:string,
-	mass:string,
-	birth_year:string,
-	eye_color:string,
-}
-
 
  
-const StarWarsAPICall = () => {
+const TimeToBurnAPI = () => {
 	
 
 	const data = {
@@ -153,7 +143,7 @@ const StarWarsAPICall = () => {
         </>
 		
 		
-		<div><h2>Food Details</h2>
+		<div><h2>Food Details:</h2>
 		
 		<table className="resultsTable">
 			<thead>
@@ -173,7 +163,7 @@ const StarWarsAPICall = () => {
 			<h2>Total Calories: {json.total_calories}</h2>
 		</div>
 		
-		<div><h2>Exercise Details</h2>
+		<div><h2>Exercise Details:</h2>
 		<table className="resultsTable">
 			<thead>
 				<tr>
@@ -200,5 +190,5 @@ const StarWarsAPICall = () => {
 	
 }
 
-export default StarWarsAPICall
+export default TimeToBurnAPI
 
