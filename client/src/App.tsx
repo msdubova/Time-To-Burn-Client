@@ -15,7 +15,7 @@ function App() {
         learn how much exercise is needed to burn those calories
 		</header>
 	  <div>
-		
+		<StarWarsAPICall />
 	  </div>
 	 <footer>
 		The 4 returners
