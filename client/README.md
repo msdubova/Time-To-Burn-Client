@@ -1,6 +1,6 @@
-# Star Wars Api
+# Time To Burn
 
-Get first character from Star Wars API with proper error handling and tests!
+learn how many calories you food has and how much exercise is needed to burn it
 
 
 npm install
