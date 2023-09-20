@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <header >
         <h1>Time To Burn</h1>
-        learn how much exercise is need to burn those calories
+        learn how much exercise is needed to burn those calories
 		</header>
 	  <div>
 		
