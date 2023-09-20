@@ -51,7 +51,7 @@ const StarWarsAPICall = () => {
 	
 	
   ],
-  "total calories": 18.2,
+  "total_calories": 18.2,
   "exercises":[{
 	  "name": "run",
 	  "duration_hr":1,
@@ -163,12 +163,16 @@ const StarWarsAPICall = () => {
 			</thead>
 			<tbody>
 		{json.items.map((f,i) => {
-			return <tr key={i}><td>{f.name}</td><td>{f.calories}</td><td>{f.serving_size_g}</td></tr>	
+			return <tr key={i}><td>{f.name}</td><td>{f.serving_size_g}</td><td>{f.calories}</td></tr>	
 		})
 		}
 		</tbody>
 		</table>
 		</div>
+		<div>
+			<h2>Total Calories: {json.total_calories}</h2>
+		</div>
+		
 		<div><h2>Exercise Details</h2>
 		<table className="resultsTable">
 			<thead>
