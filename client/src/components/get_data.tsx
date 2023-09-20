@@ -11,15 +11,12 @@ interface Character {
 	birth_year:string,
 	eye_color:string,
 }
+
+
  
 const StarWarsAPICall = () => {
 	
-	const [json, setJson] = useState<Character | null >(null)
-	const [errorMessage, setErrorMessage] = useState("")
-	const [status, setStatus] = useState<number>()
 
-	
-	
 	const data = {
   "items": [
     {
@@ -35,10 +32,27 @@ const StarWarsAPICall = () => {
       "carbohydrates_total_g": 3.9,
       "fiber_g": 1.2,
       "sugar_g": 2.6,
+    },
+	
+	{
+      "name": "egg",
+      "calories": 18.2,
+      "serving_size_g": 100,
+      "fat_total_g": 0.2,
+      "fat_saturated_g": 0,
+      "protein_g": 0.9,
+      "sodium_mg": 4,
+      "potassium_mg": 23,
+      "cholesterol_mg": 0,
+      "carbohydrates_total_g": 3.9,
+      "fiber_g": 1.2,
+      "sugar_g": 2.6,
     }
+	
+	
   ],
   "total calories": 18.2,
-  "exrcises":[{
+  "exercises":[{
 	  "name": "run",
 	  "duration_hr":1,
 	  "duration_minutes":60
@@ -51,12 +65,15 @@ const StarWarsAPICall = () => {
   ]
 }
 	
-	
+	const [json, setJson] = useState<typeof data | null >(null)
+	const [errorMessage, setErrorMessage] = useState("")
+	const [status, setStatus] = useState<number>()
 	
 	
 	function calculateSubmit(){
 		
-		alert("submit")
+		//alert("submit")
+		setJson(data)
 	}
 	
 	
@@ -113,16 +130,69 @@ const StarWarsAPICall = () => {
 	
 	if(textInput.length > 2) buttonDisabled = false
 
-	//uses scan so findtext can find each field
-    return (
-        <>
-<div><input type={"text"} size={60} onChange={(e) => setTextInput(e.target.value) } /> </div>
-<div><button disabled={buttonDisabled} onClick={calculateSubmit}>Calculate</button> </div>
+
+	if(json == null) {
+
+		//uses scan so findtext can find each field
+		return (
+			<>
+	<div><input type={"text"} size={60} value={textInput} onChange={(e) => setTextInput(e.target.value) } /> </div>
+	<div><button disabled={buttonDisabled} onClick={calculateSubmit}>Calculate</button> </div>
+			</>
+			
+		)
+	}
+	else {
+		//console.log(json.items)
+		return (
+		<>
+		
+		 <>
+	<div><input type={"text"} size={60} value={textInput} onChange={(e) => setTextInput(e.target.value) } /> </div>
+			<div><button disabled={buttonDisabled} onClick={calculateSubmit}>Calculate</button> </div>
         </>
 		
-				
 		
-    )
+		<div><h2>Food Details</h2>
+		
+		<table className="resultsTable">
+			<thead>
+				<tr>
+					<th>Name</th><th>Calories</th><th>serving size</th>
+				</tr>
+			</thead>
+			<tbody>
+		{json.items.map((f,i) => {
+			return <tr key={i}><td>{f.name}</td><td>{f.calories}</td><td>{f.serving_size_g}</td></tr>	
+		})
+		}
+		</tbody>
+		</table>
+		</div>
+		<div><h2>Exercise Details</h2>
+		<table className="resultsTable">
+			<thead>
+				<tr>
+					<th>Exercise</th><th>Hours</th><th>Minutes</th>
+				</tr>
+			</thead>
+			<tbody>
+			{
+			json.exercises.map((e,i) => {
+				return <tr key={i}><td>{e.name}</td><td>{e.duration_hr}</td><td>{e.duration_minutes}</td></tr>
+				
+			})
+			
+			}
+			</tbody>
+		</table>
+		
+		</div>
+		
+		
+		</>
+		)
+	}
 	
 }
 
