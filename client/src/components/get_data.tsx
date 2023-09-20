@@ -20,6 +20,40 @@ const StarWarsAPICall = () => {
 
 	
 	
+	const data = {
+  "items": [
+    {
+      "name": "tomato",
+      "calories": 18.2,
+      "serving_size_g": 100,
+      "fat_total_g": 0.2,
+      "fat_saturated_g": 0,
+      "protein_g": 0.9,
+      "sodium_mg": 4,
+      "potassium_mg": 23,
+      "cholesterol_mg": 0,
+      "carbohydrates_total_g": 3.9,
+      "fiber_g": 1.2,
+      "sugar_g": 2.6,
+    }
+  ],
+  "total calories": 18.2,
+  "exrcises":[{
+	  "name": "run",
+	  "duration_hr":1,
+	  "duration_minutes":60
+  },
+   {
+  "name": "skip",
+  "duration_hr":0.5,
+  "duration_minutes":30
+  }
+  ]
+}
+	
+	
+	
+	
 	function calculateSubmit(){
 		
 		alert("submit")
