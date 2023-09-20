@@ -85,6 +85,9 @@ const StarWarsAPICall = () => {
 <div><input type={"text"} size={60} onChange={(e) => setTextInput(e.target.value) } /> </div>
 <div><button disabled={buttonDisabled} onClick={calculateSubmit}>Calculate</button> </div>
         </>
+		
+				
+		
     )
 	
 }
