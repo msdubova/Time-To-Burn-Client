@@ -13,7 +13,7 @@ export const DisplayResults : React.FC =() => {
 	
 
 	useEffect(() => { // this gets called twice in reacts dev mode strict mode, build mode is not effected ?
-	  
+						//https://www.reddit.com/r/reactjs/comments/ugzopd/why_is_my_fetch_getting_called_twice/
 		const getData = async () => {
 			
 			//if(json != null) return
