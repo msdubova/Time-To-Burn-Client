@@ -10,10 +10,14 @@ export const DisplayResults : React.FC =() => {
 	
 	const [errorMessage, setErrorMessage] = useState("")
 	const [status, setStatus] = useState<number>()
+	
 
-	useEffect(() => {
+	useEffect(() => { // this gets called twice in reacts dev mode strict mode, build mode is not effected ?
 	  
 		const getData = async () => {
+			
+			//if(json != null) return
+		
 			
 			let responce
 			  
