@@ -1,18 +1,79 @@
 
+import {useEffect, useState} from "react"
 
-export type DisplayResultsProp = {json:any}
 
-export const DisplayResults : React.FC<DisplayResultsProp> =({json}) => {
+export const DisplayResults : React.FC =() => {
 
 	//console.log(json)
 
+	const [json,setJson] = useState<any>(null)
+	
+	const [errorMessage, setErrorMessage] = useState("")
+	const [status, setStatus] = useState<number>()
+
+	useEffect(() => {
+	  
+		const getData = async () => {
+			
+			let responce
+			  
+			try{
+				responce = await fetch("http://localhost:4000/test")
+				//if (responce.status === 200) {
+					const json = await responce.json()
+					console.log(json)
+					setJson(json)
+					console.log("submitted")
+				//}
+				//setStatus(responce.status)
+			}catch(error:any) {
+				console.log("ERROR ",error.message)
+				setErrorMessage(error.name)
+			}
+			
+			if(responce?.ok) {
+				
+			}
+			else {
+				console.log("responce code: "+responce?.status)
+				
+				setStatus(responce?.status)
+			}
+			
+		}
+	
+		getData()
+	},[])
+
+
+	
+
+	
 	if(json === null) {
 		return (<>
-		
+		nothing
 		</>
 		)
 	}
-	
+
+
+	//console.log("message length", errorMessage.length)
+
+	if(errorMessage.length > 0) {
+		
+		//console.log("status is "+status)
+					
+		return (
+			<>
+				Error:{errorMessage}
+			</>
+		)
+	}
+
+
+
+
+
 	return (
 		<>
 			<div><h2>Food Details:</h2>
