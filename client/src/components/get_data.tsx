@@ -41,7 +41,7 @@ const TimeToBurnAPI = () => {
 	
 	
   ],
-  "total_calories": 18.2,
+  "total_calories": 36.4,
   "exercises":[{
 	  "name": "run",
 	  "duration_hr":1,
