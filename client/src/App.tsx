@@ -1,12 +1,20 @@
 //import React, {useState, useEffect} from 'react';
 //import axios from "axios";
 
+import {useEffect} from "react"
+
+
 import TimeToBurnAPI from "./components/get_data"
 //import {StarWarsCharacter} from './components/starwars_character'
 
 import './App.css';
 
 function App() { 
+	
+   useEffect(() => {
+     document.title = "Time To Burn";  
+   }, []);	
+	
 	
   return (
     <div className="App">
@@ -24,5 +32,9 @@ function App() {
     </div>
   );
 }
+
+ function componentDidMount() {
+    document.title = "Time To Burn"; 
+ }
 
 export default App;
