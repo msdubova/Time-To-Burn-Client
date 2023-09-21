@@ -13,8 +13,6 @@ export const DisplayResults : React.FC<DisplayResultsProp> =({json}) => {
 		)
 	}
 	
-
-	
 	return (
 		<>
 			<div><h2>Food Details:</h2>
@@ -62,12 +60,8 @@ export const DisplayResults : React.FC<DisplayResultsProp> =({json}) => {
 		
 		</div>
 			
-			
 		</>
 	
 	)
 
-
 }
-
-
