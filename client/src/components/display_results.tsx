@@ -26,7 +26,7 @@ export const DisplayResults : React.FC =() => {
 				//}
 				//setStatus(responce.status)
 			}catch(error:any) {
-				console.log("ERROR ",error.message)
+				//console.log("ERROR ",error.message)
 				setErrorMessage(error.message)
 			}
 			
