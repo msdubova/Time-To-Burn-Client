@@ -22,7 +22,7 @@ const TimeToBurnAPI = () => {
 	let buttonDisabled = true
 	
 	function submit() {
-		console.log("WTF")
+	
 		setCountSubmit(countSubmit+1)// count submit needed for key so state gets reset
 		//setJson(null)// forces reload
 		setSubmitted( true)
