@@ -9,7 +9,7 @@ import App from "./App";
 
 describe("<App>",  () => {
 	
-  test("Is title displayed",  () => {
+  test("Is heading displayed",  () => {
      render(<App />);
 
      expect( screen.getByText("Time To Burn")).toBeInTheDocument()
