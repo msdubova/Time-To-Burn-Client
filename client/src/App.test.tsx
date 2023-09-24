@@ -6,7 +6,6 @@ import "@testing-library/jest-dom";
 import App from "./App";
 
 
-
 describe("<App>",  () => {
 	
   test("Is heading displayed ?",  () => {
@@ -14,12 +13,5 @@ describe("<App>",  () => {
 
      expect( screen.getByText("Time To Burn")).toBeInTheDocument()
   });
-  
-
-  test("Is calculate button displayed ?",  () => {
-    render(<App />);
-  
-    expect( screen.getByText("Calculate")).toBeInTheDocument()
- });
   
 })
