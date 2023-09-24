@@ -21,10 +21,10 @@ describe("<TextInput>",  () => {
 
 	    const st = screen.getByRole('textbox');
 	    expect(st).toBeInTheDocument()
-  });
+    });
 
 
-
+    
    test("onChange called ?", async  () => {
 
         const mockChange = jest.fn()
@@ -42,9 +42,6 @@ describe("<TextInput>",  () => {
 
 	    const st = screen.getByRole('textbox');
 	    expect(mockChange).toHaveBeenCalledTimes(3)
-  });
+    });
   
-
-
-
 })
