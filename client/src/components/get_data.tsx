@@ -1,7 +1,7 @@
 import {useState} from "react"
 
 import {DisplayResults} from './display_results'
-
+import {TextInput} from './text_input'
  
 const TimeToBurnAPI = () => {
 	
@@ -30,7 +30,7 @@ const TimeToBurnAPI = () => {
 	if(submitted === true) {
 		return (
 			<>
-				<div><input type={"text"} size={60} value={textInput} onChange={(e) => setTextInput(e.target.value) } /> </div>
+				<div><TextInput value={textInput} onChangeText={ setTextInput } /> </div>
 				<div><button disabled={buttonDisabled} onClick={submit}>Calculate</button> </div>
 				
 				<DisplayResults key={countSubmit} />
@@ -41,7 +41,7 @@ const TimeToBurnAPI = () => {
 	}else {
 		return (
 		<>
-			<div><input type={"text"} size={60} value={textInput} onChange={(e) => setTextInput(e.target.value) } /> </div>
+			<div><TextInput value={textInput} onChangeText={ setTextInput } /> </div>
 			<div><button disabled={buttonDisabled} onClick={submit}>Calculate</button> </div>
 		</>
 		)
