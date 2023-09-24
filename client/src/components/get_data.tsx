@@ -2,19 +2,13 @@ import {useEffect, useState} from "react"
 
 import {DisplayResults} from './display_results'
 
-import URL from "../util/url"
-
-
  
 const TimeToBurnAPI = () => {
 	
-
 	//const [json, setJson] = useState<any | null >(null)
-	
 	
 	const [submitted, setSubmitted] = useState<boolean >(false)
 	
-
 	const [textInput, setTextInput] = useState<string>("")
 
 	const [countSubmit, setCountSubmit] = useState<number>(0) // needed for key to reset state
@@ -50,8 +44,8 @@ const TimeToBurnAPI = () => {
 			<div><input type={"text"} size={60} value={textInput} onChange={(e) => setTextInput(e.target.value) } /> </div>
 			<div><button disabled={buttonDisabled} onClick={submit}>Calculate</button> </div>
 		</>
-	)
-		}
+		)
+	}
 	
 }
 
