@@ -1,6 +1,7 @@
 
 import {useEffect, useState} from "react"
 
+import URL from '../util/url'
 
 export const DisplayResults : React.FC =() => {
 
@@ -21,7 +22,7 @@ export const DisplayResults : React.FC =() => {
 			let responce
 			  
 			try{
-				responce = await fetch("http://localhost:4000/test")
+				responce = await fetch(URL)
 				//if (responce.status === 200) {
 					const json = await responce.json()
 					console.log(json)
@@ -48,8 +49,6 @@ export const DisplayResults : React.FC =() => {
 		getData()
 	},[])
 	
-	
-
 	//console.log("message length", errorMessage.length)
 
 	if(errorMessage.length > 0) {

@@ -1,3 +1,3 @@
-const URL = 'https://swapi.dev/api/people/1/'
+const URL = "http://localhost:4000/test"
 
 export default URL
