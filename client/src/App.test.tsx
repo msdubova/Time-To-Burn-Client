@@ -12,8 +12,7 @@ describe("<App>",  () => {
 	
   test("Is title displayed",  () => {
      render(<App />);
-	 
-	 // note find by text does not get partial strings so just searching for luke fails
+
      expect( screen.getByText("Time To Burn")).toBeInTheDocument()
   });
   
@@ -21,7 +20,6 @@ describe("<App>",  () => {
   test("Is calculate button displayed?",  () => {
     render(<App />);
   
-  // note find by text does not get partial strings so just searching for luke fails
     expect( screen.getByText("Calculate")).toBeInTheDocument()
  });
   
