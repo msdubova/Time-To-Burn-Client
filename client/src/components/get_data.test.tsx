@@ -7,10 +7,17 @@ import TimeToBurnAPI from "./get_data";
 
 describe("<TimeToBurnAPI>",  () => {
 	
-  test("Is heading displayed ?",  () => {
+  test("Is button  ?",  () => {
      render(<TimeToBurnAPI />);
 
      expect( screen.getByText("Calculate")).toBeInTheDocument()
   });
   
+
+  test("Is submit button disabled at start ?",  () => {
+    render(<TimeToBurnAPI />);
+
+    expect( screen.getByRole("button")).toHaveAttribute('disabled')
+ });
+
 })
