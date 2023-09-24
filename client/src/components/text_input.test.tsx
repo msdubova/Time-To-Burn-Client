@@ -4,6 +4,7 @@ import user from '@testing-library/user-event';
 import "@testing-library/jest-dom";
 
 import {TextInput} from "./text_input";
+import { toBeVisible } from "@testing-library/jest-dom/matchers";
 
 
 describe("<TextInput>",  () => {
@@ -17,8 +18,8 @@ describe("<TextInput>",  () => {
 	
         render(<TextInput {...props} />);
 
-	    const st = screen.getByRole('textbox');
-	    expect(st).toBeInTheDocument()
+	    const tb = screen.getByRole('textbox');
+	    expect(tb).toBeInTheDocument()
     });
 
 
@@ -36,7 +37,7 @@ describe("<TextInput>",  () => {
 
         await user.type(screen.getByRole('textbox'), 'egg');
 
-	    const st = screen.getByRole('textbox');
+	    const tb = screen.getByRole('textbox');
 	    expect(mockChange).toHaveBeenCalledTimes(3)
     });
   
