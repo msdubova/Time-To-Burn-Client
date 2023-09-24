@@ -18,7 +18,7 @@ describe("<App>",  () => {
   });
   
 
-  test("Is calculate button display?",  () => {
+  test("Is calculate button displayed?",  () => {
     render(<App />);
   
   // note find by text does not get partial strings so just searching for luke fails
