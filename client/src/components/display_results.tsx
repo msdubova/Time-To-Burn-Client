@@ -19,10 +19,10 @@ export const DisplayResults : React.FC =() => {
 			try{
 				responce = await fetch(URL)
 				//if (responce.status === 200) {
-					const json = await responce.json()
-					console.log(json)
-					setJson(json)
-					console.log("submitted")
+				const json = await responce.json()
+				//console.log(json)
+				setJson(json)
+				//console.log("submitted")
 				//}
 				//setStatus(responce.status)
 			}catch(error:any) {
