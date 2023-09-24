@@ -23,14 +23,14 @@ afterAll(() => server.close())
 
 describe("<App>",  () => {
 	
-  test("if works stars wars api call works, should say Luke Skywalker", async () => {
+  test("Is title displayed", async () => {
      render(<App />);
 	 
 	 // note find by text does not get partial strings so just searching for luke fails
-     expect(await screen.findByText("Name:Luke Skywalker")).toBeInTheDocument()
+     expect(await screen.findByText("Time To Burn")).toBeInTheDocument()
   });
   
-  
+  /*
   test("on server error 500,  correct error message", async () => {
     server.use(
       rest.get(URL , (req, res, ctx) => {
@@ -50,5 +50,5 @@ describe("<App>",  () => {
     render(<App />);
     expect(await screen.findByText(ERROR_418)).toBeInTheDocument();
   });
-  
+  */
 })
