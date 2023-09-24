@@ -59,7 +59,7 @@ export const DisplayResults : React.FC =() => {
 	if(json === null) {
 		return (
 		<>
-			nothing
+			Loading...
 		</>
 		)
 	}
