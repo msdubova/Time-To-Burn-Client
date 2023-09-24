@@ -11,9 +11,7 @@ describe("<TextInput>",  () => {
     test("renders component",  () => {
 	
 	    const props ={
-            "numberOfBeings":"",
             onChangeText:jest.fn(),
-            validate:jest.fn(),
             value:""
 	   };
 	
@@ -30,9 +28,7 @@ describe("<TextInput>",  () => {
         const mockChange = jest.fn()
 	
 	    const props ={
-            "numberOfBeings":"",
             onChangeText:mockChange,
-            validate:jest.fn(),
             value:""
 	   };
 	
