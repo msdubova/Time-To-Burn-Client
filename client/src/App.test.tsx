@@ -3,52 +3,26 @@ import { setupServer } from "msw/node";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
-import {ERROR_500, ERROR_418} from "./util/error_codes"
-
-import URL from "./util/url"
-
 import App from "./App";
 
 
-const server = setupServer(
-  rest.get( URL , (req, res, ctx) => {
-    return res(ctx.json({ name: "Luke Skywalker", height:"172", birth_year:"19BBY", eye_colour:"blue" }))
-  })
-)
-
-beforeAll(() => server.listen())
-afterEach(() => server.resetHandlers())
-afterAll(() => server.close())
 
 
 describe("<App>",  () => {
 	
-  test("Is title displayed", async () => {
+  test("Is title displayed",  () => {
      render(<App />);
 	 
 	 // note find by text does not get partial strings so just searching for luke fails
-     expect(await screen.findByText("Time To Burn")).toBeInTheDocument()
+     expect( screen.getByText("Time To Burn")).toBeInTheDocument()
   });
   
-  /*
-  test("on server error 500,  correct error message", async () => {
-    server.use(
-      rest.get(URL , (req, res, ctx) => {
-        return res(ctx.status(500));
-      })
-    );
-    render(<App />);
-    expect(await screen.findByText(ERROR_500)).toBeInTheDocument();
-  });
 
-  test("on server error 418,  correct error message", async () => {
-    server.use(
-      rest.get(URL, (req, res, ctx) => {
-        return res(ctx.status(418));
-      })
-    );
+  test("Is calculate button display?",  () => {
     render(<App />);
-    expect(await screen.findByText(ERROR_418)).toBeInTheDocument();
-  });
-  */
+  
+  // note find by text does not get partial strings so just searching for luke fails
+    expect( screen.getByText("Calculate")).toBeInTheDocument()
+ });
+  
 })
