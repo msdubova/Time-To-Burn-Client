@@ -5,10 +5,7 @@ import URL from '../util/url'
 
 export const DisplayResults : React.FC =() => {
 
-	//console.log(json)
-
 	const [json,setJson] = useState<any>(null)
-	
 	const [errorMessage, setErrorMessage] = useState("")
 	const [status, setStatus] = useState<number>()
 	
@@ -17,8 +14,6 @@ export const DisplayResults : React.FC =() => {
 						//https://www.reddit.com/r/reactjs/comments/ugzopd/why_is_my_fetch_getting_called_twice/
 		const getData = async () => {
 			
-			//if(json != null) return
-		
 			let responce
 			  
 			try{
@@ -32,7 +27,7 @@ export const DisplayResults : React.FC =() => {
 				//setStatus(responce.status)
 			}catch(error:any) {
 				console.log("ERROR ",error.message)
-				setErrorMessage(error.name)
+				setErrorMessage(error.message)
 			}
 			
 			if(responce?.ok) {
