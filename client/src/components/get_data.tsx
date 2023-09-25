@@ -26,7 +26,7 @@ const TimeToBurnAPI = () => {
 
 	function handleKeyPress(e:any) {
 		if(e.nativeEvent.key === "Enter"){ // pressed enter
-			if(textEntryValid() == false){ // and more than 2 characters in textbox
+			if(textEntryValid() === false){ // and more than 2 characters in textbox
 				submit()
 			}
 		}
