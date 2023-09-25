@@ -3,7 +3,12 @@ import {useEffect, useState} from "react"
 
 import URL from '../util/url'
 
-export const DisplayResults : React.FC =() => {
+
+type DisplayResultsProps ={
+	text:string
+}
+
+export const DisplayResults : React.FC<DisplayResultsProps> =({text}) => {
 
 	const [json,setJson] = useState<any>(null)
 	const [errorMessage, setErrorMessage] = useState("")

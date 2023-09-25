@@ -22,11 +22,11 @@ afterAll(() => server.close())
 
 describe("<DisplayResults>",  () => {
 	
-  test("Is displayed ?",  () => {
-    //render(<DisplayResults />);
+    test("Is displayed ?",  () => {
+        //render(<DisplayResults />);
   
-    //expect( screen.getByText("Calculate")).toBeInTheDocument()
- });
+        //expect( screen.getByText("Calculate")).toBeInTheDocument()
+    });
   
   /*
   test("on server error 500,  correct error message", async () => {

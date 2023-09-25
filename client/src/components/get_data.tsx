@@ -33,7 +33,7 @@ const TimeToBurnAPI = () => {
 				<div><TextInput value={textInput} onChangeText={ setTextInput } /> </div>
 				<div><button disabled={buttonDisabled} onClick={submit}>Calculate</button> </div>
 				
-				<DisplayResults key={countSubmit} />
+				<DisplayResults key={countSubmit} text={textInput} />
 			</>
 		)
 
