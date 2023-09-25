@@ -24,13 +24,27 @@ const TimeToBurnAPI = () => {
 	}
 
 
-	if(textInput.length > 2) buttonDisabled = false
+	function handleKeyPress(e:any) {
+		if(e.nativeEvent.key === "Enter"){ // pressed enter
+			if(textEntryValid() == false){ // and more than 2 characters in textbox
+				submit()
+			}
+		}
+	}
 
+	function textEntryValid() {
+
+		if(textInput.length > 2) buttonDisabled = false
+
+		return buttonDisabled
+	}
+	
+	textEntryValid()
 
 	if(submitted === true) {
 		return (
 			<>
-				<div><TextInput value={textInput} onChangeText={ setTextInput } /> </div>
+				<div><TextInput value={textInput} onChangeText={ setTextInput } onKeyPress={handleKeyPress} /> </div>
 				<div><button disabled={buttonDisabled} onClick={submit}>Calculate</button> </div>
 				
 				<DisplayResults key={countSubmit} text={textInput} />
@@ -41,7 +55,7 @@ const TimeToBurnAPI = () => {
 	}else {
 		return (
 		<>
-			<div><TextInput value={textInput} onChangeText={ setTextInput } /> </div>
+			<div><TextInput value={textInput} onChangeText={ setTextInput } onKeyPress={handleKeyPress} /> </div>
 			<div><button disabled={buttonDisabled} onClick={submit}>Calculate</button> </div>
 		</>
 		)

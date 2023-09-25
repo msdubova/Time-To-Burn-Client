@@ -13,6 +13,7 @@ describe("<TextInput>",  () => {
 	
 	    const props ={
             onChangeText:jest.fn(),
+            onKeyPress:jest.fn(),
             value:""
 	   };
 	
@@ -30,6 +31,7 @@ describe("<TextInput>",  () => {
 	
 	    const props ={
             onChangeText:mockChange,
+            onKeyPress:jest.fn(),
             value:""
 	   };
 	
