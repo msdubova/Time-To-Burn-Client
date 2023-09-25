@@ -23,7 +23,7 @@ export const DisplayResults : React.FC<DisplayResultsProps> =({text}) => {
 			  
 			try{
 				//console.log("text is "+URL+"?query="+encodeURIComponent(text))
-				responce = await fetch(URL+"?query="+encodeURIComponent(text))
+				responce = await fetch(URL+encodeURIComponent(text))
 				//if (responce.status === 200) {
 				const json = await responce.json()
 				//console.log(json)
@@ -86,7 +86,7 @@ export const DisplayResults : React.FC<DisplayResultsProps> =({text}) => {
 					<tbody>
 					{
 						json.items.map((f:any,i:number) => {
-							return <tr key={i}><td>{f.name}</td><td>{f.serving_size_g}</td><td>{f.calories}</td><td>{f.protein_g}</td>
+							return <tr key={i}><td>{f.name}</td><td>{f.calories}</td><td>{f.serving_size_g}</td><td>{f.protein_g}</td>
 								<td>{f.sodium_mg}</td><td>{f.potassium_mg}</td><td>{f.cholesterol_mg}</td><td>{f.carbohydrates_total_g}</td></tr>	
 						})
 					}
@@ -102,13 +102,13 @@ export const DisplayResults : React.FC<DisplayResultsProps> =({text}) => {
 				<table className="resultsTable">
 					<thead>
 						<tr>
-							<th>Exercise</th><th>Hours</th><th>Minutes</th>
+							<th>Exercise</th><th>Calories burned per hour</th><th>Hours to burn total cals</th>
 						</tr>
 					</thead>
 					<tbody>
 					{
 						json.exercises.map((e:any,i:number) => {
-							return <tr key={i}><td>{e.name}</td><td>{e.duration_hr}</td><td>{e.duration_minutes}</td></tr>
+							return <tr key={i}><td>{e.name}</td><td>{e.calsPerHour}</td><td>{e.time_to_burn_total_cals.hours}</td></tr>
 						
 						})
 					}

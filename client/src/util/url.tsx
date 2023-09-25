@@ -1,3 +1,3 @@
-const URL = "http://localhost:4000/test"
+const URL = "http://localhost:8080/api/nutrition/"
 
 export default URL
