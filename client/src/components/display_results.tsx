@@ -22,7 +22,8 @@ export const DisplayResults : React.FC<DisplayResultsProps> =({text}) => {
 			let responce
 			  
 			try{
-				responce = await fetch(URL)
+				//console.log("text is "+text+"  "+encodeURIComponent(text))
+				responce = await fetch(URL+"?query="+encodeURIComponent(text))
 				//if (responce.status === 200) {
 				const json = await responce.json()
 				//console.log(json)
