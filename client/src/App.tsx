@@ -1,7 +1,7 @@
 //import React, {useState, useEffect} from 'react';
 //import axios from "axios";
 
-import {useEffect} from "react"
+//import {useEffect} from "react"
 
 
 import TimeToBurnAPI from "./components/get_data"
