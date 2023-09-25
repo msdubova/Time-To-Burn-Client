@@ -11,11 +11,6 @@ import './App.css';
 
 function App() { 
 	
-   useEffect(() => {
-     document.title = "Time To Burn";  
-   }, []);	
-	
-	
   return (
     <div className="App">
       <header >
