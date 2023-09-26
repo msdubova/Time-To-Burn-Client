@@ -40,7 +40,7 @@ export const DisplayResults : React.FC<DisplayResultsProps> =({text}) => {
 				
 			}
 			else {
-				console.log("responce code: "+responce?.status)
+				//console.log("responce code: "+responce?.status)
 				
 				setStatus(responce?.status)
 			}
