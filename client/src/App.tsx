@@ -13,7 +13,7 @@ function App() {
 	// <img src="animated-fire-image-0005.gif" alt="fire" width={40} height={40} />
   return (
     <div className="App">
-      <header >
+      <header>  
         <h1><img src="pngegg.png" width={40} height={40} alt="Stop watch"/>Time To Burn
     <img src="pngegg.png" width={40} height={40} alt="Stop watch"/>
     </h1>
