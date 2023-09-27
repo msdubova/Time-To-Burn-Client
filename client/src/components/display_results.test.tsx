@@ -10,9 +10,10 @@ import {DisplayResults} from "./display_results";
 
 const PARAM_TEXT = "2 apples 400g chicken"
 
+const URL_WITH_PARAM = URL + encodeURIComponent(PARAM_TEXT)
 
 const server = setupServer(
-  rest.get( URL + encodeURIComponent(PARAM_TEXT) , (req, res, ctx) => {
+  rest.get( URL_WITH_PARAM , (req, res, ctx) => {
     return res(ctx.json({ 
       "items": [
         {
@@ -127,6 +128,22 @@ describe("<DisplayResults>",  () => {
     expect( await screen.findByText("Taekwondo")).toBeInTheDocument() 
     expect( await screen.findByText("Swimming")).toBeInTheDocument() 
     expect( await screen.findByText("Running up Stairs")).toBeInTheDocument() 
-});
+  });
+
+  // this does not work
+  test('handles server error', async () => {
+    server.use(
+      // override the initial "GET /greeting" request handler
+      // to return a 500 Server Error
+      rest.get(URL_WITH_PARAM, (req, res, ctx) => {
+        return res(ctx.status(500))
+      }),
+    )
+
+    render(<DisplayResults text={PARAM_TEXT}/>);
+
+    expect( await screen.findByText("Error:") ).toBeInTheDocument()  
+    // ...
+  })
 
 })
