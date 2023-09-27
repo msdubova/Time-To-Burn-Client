@@ -146,7 +146,7 @@ describe("<DisplayResults>",  () => {
     // ...
   })
 
-  test('handles server error(invalid params)', async () => {
+  test('handles server error(eg invalid params)', async () => {
 
     const WRONG_PARAM_TEXT = "2apples400gchicken" // user forgot the spaces
     const URL_WITH_WRONG_PARAM = URL+WRONG_PARAM_TEXT
