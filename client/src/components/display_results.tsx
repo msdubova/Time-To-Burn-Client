@@ -27,7 +27,7 @@ export const DisplayResults : React.FC<DisplayResultsProps> =({text}) => {
 				
 				const json = await responce.json()
 				
-				if(json?.success === false) { // error on server, properly user type in invalid text eg "10kgapple" forgetting space
+				if(json?.success === false) { // error on server, probably user type in invalid text eg "10kgapple" forgetting space
 					//console.log(json)
 					setErrorMessage(json?.message)
 				}
@@ -41,7 +41,7 @@ export const DisplayResults : React.FC<DisplayResultsProps> =({text}) => {
 		}
 	
 		getData()
-	},[])
+	},[]) // get infinite api hits without []
 	
 
 	if(errorMessage.length > 0) { //span needed for findByText to work
