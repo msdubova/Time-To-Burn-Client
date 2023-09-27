@@ -41,7 +41,7 @@ export const DisplayResults : React.FC<DisplayResultsProps> =({text}) => {
 		}
 	
 		getData()
-	},[]) // get infinite api hits without []
+	},[]) // get infinite api hits without [], would putting url in it work ?
 	
 
 	if(errorMessage.length > 0) { //span needed for findByText to work
