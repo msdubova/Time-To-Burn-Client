@@ -118,7 +118,7 @@ describe("<DisplayResults>",  () => {
       expect( await screen.findByText("chicken")).toBeInTheDocument() 
   });
 
-  test("Is showing exercise title and details?",  async () => {
+  test("Is showing exercise details?",  async () => {
     render(<DisplayResults text={PARAM_TEXT}/>);
 
     //expect( await screen.findByText("Exercise Details:")).toBeInTheDocument() 
