@@ -130,8 +130,8 @@ describe("<DisplayResults>",  () => {
     expect( await screen.findByText("Running up Stairs")).toBeInTheDocument() 
   });
 
-  // this does not work
-  test('handles server error', async () => {
+ 
+  test('handles connection error', async () => {
     server.use(
       // override the initial "GET /greeting" request handler
       // to return a 500 Server Error
@@ -145,5 +145,26 @@ describe("<DisplayResults>",  () => {
     expect( await screen.findByText("Error:") ).toBeInTheDocument()  
     // ...
   })
+
+  test('handles server error(invalid params)', async () => {
+
+    const WRONG_PARAM_TEXT = "2apples400gchicken" // user forgot the spaces
+    const URL_WITH_WRONG_PARAM = URL+WRONG_PARAM_TEXT
+
+    server.use(
+      // override the initial "GET /greeting" request handler
+      // to return a 500 Server Error
+      rest.get(URL_WITH_WRONG_PARAM, (req, res, ctx) => {
+        return res(ctx.status(500))
+      }),
+    )
+
+    render(<DisplayResults text={WRONG_PARAM_TEXT}/>);
+
+    expect( await screen.findByText("Error:") ).toBeInTheDocument()  
+    // ...
+  })
+
+
 
 })
