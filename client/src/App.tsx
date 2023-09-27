@@ -14,8 +14,8 @@ function App() {
   return (
     <div className="App">
       <header>  
-        <h1><img src="pngegg.png" width={40} height={40} alt="Stop watch"/>Time To Burn
-    <img src="pngegg.png" width={40} height={40} alt="Stop watch"/>
+        <h1><img src="animated-fire-image-0005.gif" width={40} height={40} alt="Stop watch"/>Time To Burn
+    <img src="animated-fire-image-0005.gif" width={40} height={40} alt="Stop watch"/>
     </h1>
         Learn how much exercise is needed to burn those calories<br/>
         Usage:100g carrots  2 apples
