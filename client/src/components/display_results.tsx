@@ -29,7 +29,7 @@ export const DisplayResults : React.FC<DisplayResultsProps> =({text}) => {
 				
 
 				if(json?.success === false) { // error on server
-					console.log(json)
+					//console.log(json)
 					setErrorMessage(json?.message)
 				}
 
