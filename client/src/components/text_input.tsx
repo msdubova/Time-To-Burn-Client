@@ -8,7 +8,7 @@ type TextInputProps ={
 export const TextInput : React.FC<TextInputProps> =({value, onChangeText, onKeyPress}) => {
     return(
         <>
-            <input type={"text"} size={60} value={value} onChange={(e) =>onChangeText(e.target.value) } onKeyPress={onKeyPress} autoFocus />
+            <input type={"text"} size={70} value={value} onChange={(e) =>onChangeText(e.target.value) } onKeyPress={onKeyPress} autoFocus />
         </>
     )
 
