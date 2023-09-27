@@ -53,6 +53,13 @@ th {
 
 }
 
+input[type="text"]
+{
+    background: transparent;
+    color:white;
+}
+
+
 h1, h2 {
   text-shadow: 1px 1px 2px pink;
 }
