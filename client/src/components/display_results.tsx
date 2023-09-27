@@ -27,8 +27,14 @@ export const DisplayResults : React.FC<DisplayResultsProps> =({text}) => {
 				
 				const json = await responce.json()
 				
+
+				if(json?.success === false) { // error on server
+					console.log(json)
+					setErrorMessage(json?.message)
+				}
+
 				setJson(json)
-				
+
 			}catch(error:any) {
 				setErrorMessage(error.message)
 			}
@@ -39,21 +45,14 @@ export const DisplayResults : React.FC<DisplayResultsProps> =({text}) => {
 	},[])
 	
 
-	if(errorMessage.length > 0) {
-		return (
-			<>
-				<div className="error">Error:{errorMessage}</div>
-			</>
-		)
+	if(errorMessage.length > 0) { //span needed for findByText to work
+		//console.log("error happened")
+		return (<> <div className="error"><span>Error:</span>{errorMessage}</div></>)
 	}
 
 
 	if(json === null) {
-		return (
-		<>
-			Loading...
-		</>
-		)
+		return (<>Loading...</>)
 	}
 
 
@@ -100,11 +99,8 @@ export const DisplayResults : React.FC<DisplayResultsProps> =({text}) => {
 					}
 					</tbody>
 				</table>
-		
 			</div>
 			
 		</>
-	
 	)
-
 }
