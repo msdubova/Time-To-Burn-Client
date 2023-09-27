@@ -12,37 +12,24 @@ export const DisplayResults : React.FC<DisplayResultsProps> =({text}) => {
 
 	const [json,setJson] = useState<any>(null)
 	const [errorMessage, setErrorMessage] = useState("")
-	const [status, setStatus] = useState<number>()
 	
 
-	useEffect(() => { // this gets called twice in reacts dev mode strict mode, build mode is not effected ?
+	useEffect(() => { // this gets called twice in reacts dev mode strict mode, build mode is not affected ?
 						//https://www.reddit.com/r/reactjs/comments/ugzopd/why_is_my_fetch_getting_called_twice/
 		const getData = async () => {
 			
 			let responce
 			  
 			try{
-				//console.log("text is "+URL+"?query="+encodeURIComponent(text))
-				responce = await fetch(URL+encodeURIComponent(text))
-				//if (responce.status === 200) {
-				const json = await responce.json()
-				//console.log(json)
-				setJson(json)
-				//console.log("submitted")
-				//}
-				//setStatus(responce.status)
-			}catch(error:any) {
-				//console.log("ERROR ",error.message)
-				setErrorMessage(error.message)
-			}
 			
-			if(responce?.ok) {
+				responce = await fetch(URL+encodeURIComponent(text))
 				
-			}
-			else {
-				//console.log("responce code: "+responce?.status)
+				const json = await responce.json()
 				
-				setStatus(responce?.status)
+				setJson(json)
+				
+			}catch(error:any) {
+				setErrorMessage(error.message)
 			}
 			
 		}
@@ -50,10 +37,8 @@ export const DisplayResults : React.FC<DisplayResultsProps> =({text}) => {
 		getData()
 	},[])
 	
-	//console.log("message length", errorMessage.length)
 
 	if(errorMessage.length > 0) {
-		//console.log("status is "+status)
 		return (
 			<>
 				<div className="error">Error:{errorMessage}</div>
