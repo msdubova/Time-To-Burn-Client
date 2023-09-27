@@ -59,7 +59,7 @@ export const DisplayResults : React.FC<DisplayResultsProps> =({text}) => {
 	return (
 		<>
 			<div>
-				<h2>Food Details:</h2>
+				<br />
 		
 				<table className="resultsTable">
 					<thead>
@@ -83,7 +83,7 @@ export const DisplayResults : React.FC<DisplayResultsProps> =({text}) => {
 				<h2>Total Calories: {json.total_calories}</h2>
 			</div>
 					
-			<div><h2>Exercise Details:</h2>
+			<div><br />
 				<table className="resultsTable">
 					<thead>
 						<tr>
