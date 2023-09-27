@@ -87,7 +87,7 @@ export const DisplayResults : React.FC<DisplayResultsProps> =({text}) => {
 				<table className="resultsTable">
 					<thead>
 						<tr>
-							<th>Exercise</th><th>Calories burned per hour</th><th>Hours to burn total cals</th>
+							<th>Exercise</th><th>Calories Burned Per Hour</th><th>Hours To Burn Total Cals</th>
 						</tr>
 					</thead>
 					<tbody>
