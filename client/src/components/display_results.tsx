@@ -8,14 +8,15 @@ type DisplayResultsProps ={
 	text:string
 }
 
+// this gets created twice in reacts dev mode strict mode, build mode is not affected ?
+//https://www.reddit.com/r/reactjs/comments/ugzopd/why_is_my_fetch_getting_called_twice/
 export const DisplayResults : React.FC<DisplayResultsProps> =({text}) => {
 
 	const [json,setJson] = useState<any>(null)
 	const [errorMessage, setErrorMessage] = useState("")
 	
 
-	useEffect(() => { // this gets called twice in reacts dev mode strict mode, build mode is not affected ?
-						//https://www.reddit.com/r/reactjs/comments/ugzopd/why_is_my_fetch_getting_called_twice/
+	useEffect(() => { 
 		const getData = async () => {
 			
 			let responce
