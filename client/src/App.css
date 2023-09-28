@@ -32,45 +32,46 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
 body {
-  
-	background-color:black;
-	color:white;	
-	 background-image:linear-gradient(to right, #e66465, #9198e5);/* linear-gradient(to right, red ,#8B8000,);*/ 
-   
+
+  background-color: black;
+  color: white;
+  background-image: linear-gradient(to right, #e66465, #9198e5);
+  /* linear-gradient(to right, red ,#8B8000,);*/
+
 }
 
- th, td {
+th,
+td {
   border: 1px outset;
 }
 
-th {
+th {}
 
-}
-
-input[type="text"]
-{
-    background: transparent;
-    color:white;
+input[type="text"] {
+  background: transparent;
+  color: white;
 }
 
 
-h1, h2 {
+h1,
+h2 {
   text-shadow: 1px 1px 2px pink;
 }
 
 h1 {
-  font-size:2em;  
+  font-size: 2em;
 }
 
 
-.resultsTable{
-	margin-left:auto;
-	margin-right:auto;
+.resultsTable {
+  margin-left: auto;
+  margin-right: auto;
 
 }

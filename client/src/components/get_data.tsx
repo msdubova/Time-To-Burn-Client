@@ -1,67 +1,82 @@
-import {useState} from "react"
+import { useState } from "react";
 
-import {DisplayResults} from './display_results'
-import {TextInput} from './text_input'
- 
+import { DisplayResults } from "./display_results";
+import { TextInput } from "./text_input";
+
 const TimeToBurnAPI = () => {
-	
-	//const [json, setJson] = useState<any | null >(null)
-	
-	const [submitted, setSubmitted] = useState<boolean >(false)
-	
-	const [textInput, setTextInput] = useState<string>("")
+  //const [json, setJson] = useState<any | null >(null)
 
-	const [countSubmit, setCountSubmit] = useState<number>(0) // needed for key to reset state
+  const [submitted, setSubmitted] = useState<boolean>(false);
 
-	let buttonDisabled = true
-	
-	function submit() {
-	
-		setCountSubmit(countSubmit+1)// count submit needed for key so state gets reset
-		//setJson(null)// forces reload
-		setSubmitted( true)
-		
-	}
+  const [textInput, setTextInput] = useState<string>("");
 
+  const [countSubmit, setCountSubmit] = useState<number>(0); // needed for key to reset state
 
-	function handleKeyPress(e:any) {
-		if(e.nativeEvent.key === "Enter"){ // pressed enter
-			if(textEntryValid() === false){ // and more than 2 characters in textbox
-				submit()
-			}
-		}
-	}
+  let buttonDisabled = true;
 
-	function textEntryValid() {
+  function submit() {
+    setCountSubmit(countSubmit + 1); // count submit needed for key so state gets reset
+    //setJson(null)// forces reload
+    setSubmitted(true);
+  }
 
-		if(textInput.length > 2) buttonDisabled = false
+  function handleKeyPress(e: any) {
+    if (e.nativeEvent.key === "Enter") {
+      // pressed enter
+      if (textEntryValid() === false) {
+        // and more than 2 characters in textbox
+        submit();
+      }
+    }
+  }
 
-		return buttonDisabled
-	}
-	
-	textEntryValid()
+  function textEntryValid() {
+    if (textInput.length > 2) buttonDisabled = false;
 
-	if(submitted === true) {
-		return (
-			<>
-				<div><TextInput value={textInput} onChangeText={ setTextInput } onKeyPress={handleKeyPress} /> </div>
-				<div><button disabled={buttonDisabled} onClick={submit}>Calculate</button> </div>
-				
-				<DisplayResults key={countSubmit} text={textInput} />
-			</>
-		)
+    return buttonDisabled;
+  }
 
-		//uses scan so findtext can find each field
-	}else {
-		return (
-		<>
-			<div><TextInput value={textInput} onChangeText={ setTextInput } onKeyPress={handleKeyPress} /> </div>
-			<div><button disabled={buttonDisabled} onClick={submit}>Calculate</button> </div>
-		</>
-		)
-	}
-	
-}
+  textEntryValid();
 
-export default TimeToBurnAPI
+  if (submitted === true) {
+    return (
+      <>
+        <div>
+          <TextInput
+            value={textInput}
+            onChangeText={setTextInput}
+            onKeyPress={handleKeyPress}
+          />{" "}
+        </div>
+        <div>
+          <button disabled={buttonDisabled} onClick={submit}>
+            Calculate
+          </button>{" "}
+        </div>
 
+        <DisplayResults key={countSubmit} text={textInput} />
+      </>
+    );
+
+    //uses scan so findtext can find each field
+  } else {
+    return (
+      <>
+        <div>
+          <TextInput
+            value={textInput}
+            onChangeText={setTextInput}
+            onKeyPress={handleKeyPress}
+          />{" "}
+        </div>
+        <div>
+          <button disabled={buttonDisabled} onClick={submit}>
+            Calculate
+          </button>{" "}
+        </div>
+      </>
+    );
+  }
+};
+
+export default TimeToBurnAPI;
